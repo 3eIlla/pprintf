@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * ze_puts - prints the character
+ * _puts - prints the character
  * @c: Input string
  *
  * Return: Number of bytes/charcter

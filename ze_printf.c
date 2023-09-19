@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 		}
 		count++;
 
-		va_end(print);	
+		va_end(print);
 	}
 	return (count);
 }

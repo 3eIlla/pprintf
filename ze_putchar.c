@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * ze_putchar - printsa character to stdout
+ * _putchar - printsa character to stdout
  * @c: character to be printed
  *
  * Return: 1 (On success)
