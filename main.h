@@ -29,7 +29,30 @@ int _putchar(char c);
 int _puts(char *c);
 
 
+/**
+ * struct fmtl - Struct op
+ *
+ * @fmt: format.
+ * @fnc: func associated.
+ */
+struct fmtl
+{
+	char fmtl;
+	int (*fnc)(va_list, char[], int, int);
+};
 
+
+/**
+ * typedef struct fmtl fmtl_t - Struct 
+ *
+ * @fmtl: The format.
+ * @fml_t: The function associated.
+ */
+typedef struct fmtl fmtl_t;
+
+
+int get_size(const char *format, int *i);
+int handle_print(const char *fmt, int *il, va_list listl, int sizel);
 
 
 

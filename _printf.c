@@ -9,33 +9,34 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int count = 0;
-	char *i, *ze_count;
-	paras_t paras = PARAMS_INIT;
+	int il, printedl = 0, printed_charsl = 0;
+	int  sizel;
+	va_list listl;
 
-	va_list print;
-
-	if (!format || (format[0] == '%' && !format[1]))
+	if (format == NULL)
 		return (-1);
-	if (format[0] == '%' && format[1] == '\0' && !format[2])
-	{
-		return (-1);
-	}
 
-	va_start(print, format);
+	va_start(listl, format);
 
-	for (i = (char *)format; *i; i++)
+	for (il = 0; format && format[il] != '\0'; il++)
 	{
-		init_paras(&paras, print);
-		if (*i != '%')
+		if (format[il] != '%')
 		{
-			count = count + _putchar(*i);
-			continue;
+			/* write(1, &format[i], 1);*/
+			printed_charsl++;
 		}
-		ze_count = i;
-		i = i + 1;
+		else
+		{
+			sizel = get_size(format, &il);
+			il = il + 1;
+			printedl = handle_print(format, &il, listl, sizel);
+			if (printedl == -1)
+				return (-1);
+			printed_charsl += printedl;
+		}
 	}
 
-		va_end(print);
-	return (count);
+	va_end(listl);
+
+	return (printed_charsl);
 }
