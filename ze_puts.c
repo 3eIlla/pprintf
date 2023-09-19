@@ -6,7 +6,7 @@
  *
  * Return: Number of bytes/charcter
  */
-int ze_puts(char *c)
+int _puts(char *c)
 {
 	int count = 0;
 
@@ -14,7 +14,7 @@ int ze_puts(char *c)
 	{
 		for (count = 0; c[count] != '\0'; count++)
 		{
-			ze_putchar(c[count]);
+			_putchar(c[count]);
 		}
 	}
 	return (count);
