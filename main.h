@@ -52,7 +52,7 @@ typedef struct paras
 	unsigned int unsign			: 1;
 } paras_t;
 
-void init_paras(paras_t *paras, va_list arp);
+void init_paras(paras_t *paras, va_list print);
 /*/ THE MAIN SPECIFIER FUNCTION/*/
 /**
  * struct spcfr- struc out
@@ -72,15 +72,15 @@ typedef struct spcfr
 
 /*1*/
 /*/c .     %c .    */
-int print_char(va_list arp, paras_t *paras);
+int print_char(va_list print, paras_t *paras);
 /*/s .     %s .  */
-int print_string(va_list arp, paras_t *paras);
+int print_string(va_list print, paras_t *paras);
 /*/% .     %% .    */
-int Print_percent(va_list arp, paras_t *paras);
+int Print_percent(va_list print, paras_t *paras);
 
 /*to call spicifieres*/
-int get_print_func(char *spc, va_list arp, paras_t *paras);
-int (*get_specifier(char *spc))(va_list arp, paras_t *paras);
+int get_print_func(char *spc, va_list print, paras_t *paras);
+int (*get_specifier(char *spc))(va_list print, paras_t *paras);
 
 
 

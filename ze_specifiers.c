@@ -5,14 +5,14 @@
 /**
  * init_paras - reset buf
  * @paras: parameters struct
- * @arp: *argument
+ * @print: *argument
  *
  * Return: void
  */
-void init_paras(paras_t *paras, va_list arp)
+void init_paras(paras_t *paras, va_list print)
 {
 	paras->unsign = 0;
-(void)arp;
+(void)print;
 }
 
 
@@ -20,17 +20,17 @@ void init_paras(paras_t *paras, va_list arp)
 /**
  * get_print_func - find func form
  * @spc: strin
- * @arp:
+ * @print:
  * @paras: Parameters
  * Return: no. of byts
 */
-int get_print_func(char *spc, va_list arp, paras_t *paras)
+int get_print_func(char *spc, va_list print, paras_t *paras)
 {
 	int (*func)(va_list, paras_t *paras) = get_specifier(spc);
 
 	if (func)
 	{
-		return (func(arp, paras));
+		return (func(print, paras));
 	}
 	return (0);
 }
@@ -38,10 +38,10 @@ int get_print_func(char *spc, va_list arp, paras_t *paras)
 /**
  * get_specifier - find func form
  * @spc: strin
- * @arp: *argumen
+ * @print: *argumen
  * Return: no. of byts
 */
-int (*get_specifier(char *spc))(va_list arp, paras_t *paras)
+int (*get_specifier(char *spc))(va_list print, paras_t *paras)
 {
 	/*int (*func)(va_list, paras_t *);*/
 	spcfr_t spcfrs[] = {
