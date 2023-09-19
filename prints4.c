@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_unsigned - prints unsigned integer numbers
- * @arpp: argument pointer
- * @paras: the parameters struct
+ * print_unsigned - unsigned int no.s
+ * @arpp: arg pointer
+ * @paras: parames struct
  *
- * Return: bytes printed
+ * Return: bytes no.
  */
 int print_unsigned(va_list arpp, paras_t *paras)
 {
@@ -24,11 +24,11 @@ int print_unsigned(va_list arpp, paras_t *paras)
 
 
 /**
- * print_address - prints address
- * @arpp: argument pointer
- * @paras: the parameters struct
+ * print_address -  addr
+ * @arpp: arg pointer
+ * @paras: parames struct
  *
- * Return: bytes printed
+ * Return: bytes no.
  */
 int print_address(va_list arpp, paras_t *paras)
 {
@@ -45,11 +45,11 @@ int print_address(va_list arpp, paras_t *paras)
 }
 
 /**
- * print_rev - prints string in reverse
+ * print_rev - string n reverse
  * @arpp: string
- * @paras: the parameters struct
+ * @paras: parames struct
  *
- * Return: number bytes printed
+ * Return: bytes no.
  */
 int print_rev(va_list arpp, paras_t *paras)
 {
@@ -69,11 +69,11 @@ int print_rev(va_list arpp, paras_t *paras)
 }
 
 /**
- * print_rot13 - prints string in rot13
+ * print_rot13 - string n rot13
  * @arpp: string
- * @paras: the parameters struct
+ * @paras: parames struct
  *
- * Return: number bytes printed
+ * Return: bytes no.
  */
 int print_rot13(va_list arpp, paras_t *paras)
 {

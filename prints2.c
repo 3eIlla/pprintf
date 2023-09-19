@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_binary - prints unsigned binary number
- * @arpp: the argument pointer
- * @paras: the parameters struct
+ * print_binary - unsigned binary no.
+ * @arpp: arg pointer
+ * @paras:parames struct
  *
- * Return: bytes printed
+ * Return: bytes no.
  */
 int print_binary(va_list arpp, paras_t *paras)
 {
@@ -20,11 +20,11 @@ int print_binary(va_list arpp, paras_t *paras)
 }
 
 /**
- * print_octal - prints unsigned octal numbers
- * @arpp: the argument pointer
- * @paras: the parameters struct
+ * print_octal - unsigned octal no.
+ * @arpp: arg pointer
+ * @paras: parames struct
  *
- * Return: bytes printed
+ * Return: bytes no.
  */
 int print_octal(va_list arpp, paras_t *paras)
 {
@@ -47,11 +47,11 @@ int print_octal(va_list arpp, paras_t *paras)
 }
 
 /**
- * print_hex - prints unsigned hex numbers in lowercase
- * @arpp: the argument pointer
- * @paras: the parameters struct
+ * print_hex - unsigned hex lowercase no. 
+ * @arpp: arg pointer
+ * @paras: parames struct
  *
- * Return: bytes printed
+ * Return: bytes no.
  */
 int print_hex(va_list arpp, paras_t *paras)
 {
@@ -77,11 +77,11 @@ int print_hex(va_list arpp, paras_t *paras)
 }
 
 /**
- * print_HEX - prints unsigned hex numbers in uppercase
- * @arpp: the argument pointer
- * @paras: the parameters struct
+ * print_HEX - unsigned hex uppercase no.
+ * @arpp: arg pointer
+ * @paras: parames struct
  *
- * Return: bytes printed
+ * Return: bytes no.
  */
 int print_HEX(va_list arpp, paras_t *paras)
 {
