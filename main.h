@@ -41,8 +41,4 @@ int _puts(char *c);
 
 
 
-
-
-
-
 #endif
