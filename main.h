@@ -33,8 +33,8 @@
 int _printf(const char *format, ...);
 
 /*/personal_sub-main*/
-int ze_putchar(char c);
-int ze_puts(char *c);
+int _putchar(char c);
+int _puts(char *c);
 
 
 
