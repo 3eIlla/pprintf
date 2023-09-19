@@ -75,4 +75,3 @@ int (*get_specifier(char *spc))(va_list print, paras_t *paras)
 		}
 	return (NULL);
 }
-
