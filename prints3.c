@@ -123,6 +123,3 @@ int print_number_left_shift(char *str, paras_t *paras)
 		ln += _putchar(pad_char);
 	return (ln);
 }
-
-
-

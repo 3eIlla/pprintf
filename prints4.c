@@ -100,4 +100,3 @@ int print_rot13(va_list arpp, paras_t *paras)
 	}
 	return (count);
 }
-
