@@ -130,10 +130,13 @@ int print_S(va_list arpp, paras_t *paras);
 
 /*p 2*/
 /* print no. that need convert */
+/*t1*/
+int print_binary(va_list arpp, paras_t *paras);
+/*t3*/
+int print_octal(va_list arpp, paras_t *paras);
 int print_hex(va_list arpp, paras_t *paras);
 int print_HEX(va_list arpp, paras_t *paras);
-int print_binary(va_list arpp, paras_t *paras);
-int print_octal(va_list arpp, paras_t *paras);
+
 
 
 /*p 3*/
