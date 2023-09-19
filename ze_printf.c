@@ -21,24 +21,24 @@ int _printf(const char *format, ...)
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
-			_putchar(format[i]);
+			ze_putchar(format[i]);
 
 		else if (format[i + 1] == 'c')
 		{
-			_putchar(va_arg(print, int));
+			ze_putchar(va_arg(print, int));
 			i++;
 		}
 
 		else if (format[i + 1] == 's')
 		{
-			ze_count = _puts(va_arg(print, char *));
+			ze_count = ze_puts(va_arg(print, char *));
 			i++;
 			count += (ze_count - 1);
 		}
 
 		else if (format[i + 1] == '%')
 		{
-			_putchar('%');
+			ze_putchar('%');
 		}
 		count++;
 
