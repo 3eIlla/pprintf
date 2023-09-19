@@ -20,7 +20,7 @@ void init_paras(paras_t *paras, va_list print)
 /**
  * get_print_func - find func form
  * @spc: strin
- * @print: *argmnt
+ * @print: *argument
  * @paras: Parameters
  * Return: no. of byts
 */
@@ -38,7 +38,6 @@ int get_print_func(char *spc, va_list print, paras_t *paras)
 /**
  * get_specifier - find func form
  * @spc: strin
- * @print: *argumen
  * Return: no. of byts
 */
 int (*get_specifier(char *spc))(va_list print, paras_t *paras)
@@ -48,6 +47,22 @@ int (*get_specifier(char *spc))(va_list print, paras_t *paras)
 		{"c", print_char},
 		{"s", print_char},
 		{"%", print_char},
+
+		{"d", print_char},
+		{"i", print_char},
+
+		{"b", print_char},
+
+		{"u", print_char},
+		{"o", print_char},
+		{"x", print_char},
+		{"X", print_char},
+
+		{"S", print_char},
+
+		{"p", print_char},
+
+
 		{NULL, NULL}
 	};
 
