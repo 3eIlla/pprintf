@@ -5,7 +5,7 @@
  * @c: Input string
  *
  * Return: Number of bytes/charcter
- */
+ *
 int ze_puts(char *c)
 {
 	int count = 0;

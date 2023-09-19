@@ -5,7 +5,7 @@
  * @format: character string
  *
  * Return: number of character/bytes
- */
+ *
 
 int _printf(const char *format, ...)
 {
