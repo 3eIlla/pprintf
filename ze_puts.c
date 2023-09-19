@@ -19,4 +19,3 @@ int _puts(char *c)
 	}
 	return (count);
 }
-
