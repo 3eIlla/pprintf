@@ -14,13 +14,15 @@
 
 #include <stdlib.h>
 
-
+/* task 4*/
 #define OUTPUT_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
 
 #define NULL_STRING "(null)"
 
+
+/* for task 3 : 7 */
 #define PARAS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
 #define CONVERT_LOWERCASE	1
@@ -29,19 +31,22 @@
 /**
  * struct parameters - parameters struct
  *
- * @unsign: flag if unsigned value
+ * @unsign:  unsigned value flag
  *
  * @plus_flag: flag to % +
  * @space_flag: flag to % ' '
  * @hashtag_flag: flag to % #
- * @zero_flag: flag to % 0
+ *
  * @minus_flag: flag to % -
  *
+ * @l_modifier: % l_modifier 
+ * @h_modifier: % h_modifier 
+ *
  * @width: field width specified
+ *
  * @precision: field precision specified
  *
- * @h_modifier: on if h_modifier is specified
- * @l_modifier: on if l_modifier is specified
+ * @zero_flag: flag to % 0
  *
  */
 typedef struct parameters
@@ -51,14 +56,18 @@ typedef struct parameters
 	unsigned int plus_flag		: 1;
 	unsigned int space_flag		: 1;
 	unsigned int hashtag_flag	: 1;
-	unsigned int zero_flag		: 1;
+	
 	unsigned int minus_flag		: 1;
 
+	unsigned int l_modifier		: 1;
+	unsigned int h_modifier		: 1;
+
 	unsigned int width;
+
 	unsigned int precision;
 
-	unsigned int h_modifier		: 1;
-	unsigned int l_modifier		: 1;
+	unsigned int zero_flag		: 1;
+
 } paras_t;
 
 /**
@@ -75,24 +84,22 @@ typedef struct specifier
 
 
 
-/* pts.c */
-/* _put.c module */
+/* _pts.c */
 int _puts(char *str);
 int _putchar(int c);
 
 /* _prinf.c */
 int _printf(const char *format, ...);
 
-/* paras.c module */
+
+/* .    helper.c .  */
+/* parameters.c  */
 void init_paras(paras_t *paras, va_list arpp);
-
-/* string_fields.c modoule */
+/* string_fields.c  */
 char *get_precision(char *pop, paras_t *paras, va_list arpp);
-
-/* number.c module */
+/* number.c */
 char *convert(long int num, int base, int flags, paras_t *paras);
-
-/* print_number.c module */
+/* print_number.c  */
 int _isdigit(int c);
 int _strlen(char *s);
 
