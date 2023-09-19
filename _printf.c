@@ -1,42 +1,46 @@
 #include "main.h"
 
 /**
- * _printf - prints output according to a format
- * @format: character string
+ * _printf - print func
+ * @format: format strin
  *
- * Return: number of character/bytes
+ * Return: bytes no.
  */
-
 int _printf(const char *format, ...)
 {
-	int il, printedl = 0, printed_charsl = 0;
-	int  sizel;
-	va_list listl;
+	int csumi = 0;
+	va_list arpp;
+	char *pop, *sttr;
+	paras_t paras = PARAS_INIT;
 
-	if (format == NULL)
+	va_start(arpp, format);
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	else if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
 
-	va_start(listl, format);
-
-	for (il = 0; format && format[il] != '\0'; il++)
+	for (pop = (char *)format; *pop; pop++)
 	{
-		if (format[il] != '%')
+		for (init_paras(&paras, arpp); !get_specifier(pop); pop++)
 		{
-			/* write(1, &format[i], 1);*/
-			printed_charsl++;
-		}
-		else
+		for (sttr = pop; *pop != '%'; pop++)
 		{
-			sizel = get_size(format, &il);
-			il = il + 1;
-			printedl = handle_print(format, &il, listl, sizel);
-			if (printedl == -1)
-				return (-1);
-			printed_charsl += printedl;
+			csumi += _putchar(*pop);
+			continue;
 		}
+		do
+
+		{
+			pop = get_width(pop, &paras, arpp);
+			pop = get_precision(pop, &paras, arpp);
+		} while (get_flag(pop, &paras));
+		pop = pop + 1;
+				csumi += print_from_to(sttr, pop,
+				paras.l_modifier || paras.h_modifier ? pop - 1 : 0);
 	}
-
-	va_end(listl);
-
-	return (printed_charsl);
+	csumi += get_print_func(pop, arpp, &paras);
+	}
+_putchar(BUF_FLUSH);
+va_end(arpp);
+return (csumi);
 }
