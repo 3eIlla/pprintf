@@ -20,14 +20,6 @@
 
 
 
-
-
-
-
-
-
-
-
 /**** .   FOR THE TASKS   . ****/
 /*0* main*/
 int _printf(const char *format, ...);
@@ -37,7 +29,15 @@ int _putchar(char c);
 int _puts(char *c);
 
 
-
+#define PARAMS_INIT {0}
+/* .   */
+/**
+ * struct paras - struc out
+*/
+typedef struct paras
+{
+	unsigned int unsign			: 1;
+} paras_t;
 
 
 

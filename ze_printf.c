@@ -9,40 +9,33 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int i, ze_count, count = 0;
+	unsigned int count = 0;
+	char *i, *ze_count;
+	paras_t paras = PARAMS_INIT;
 
 	va_list print;
 
-	if (!format || (format[0] == '%' && format[1] == '\0'))
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
+	if (format[0] == '%' && format[1] == '\0' && !format[2])
+	{
+		return (-1);
+	}
 
 	va_start(print, format);
 
-	for (i = 0; format[i] != '\0'; i++)
+	for (i = (char *); *i; i++)
 	{
-		if (format[i] != '%')
-			_putchar(format[i]);
-
-		else if (format[i + 1] == 'c')
+		init_paras(&paras, print);
+		if (*i != '%')
 		{
-			_putchar(va_arg(print, int));
-			i++;
+			count = count + _putchar(*i);
+			continue;
 		}
-
-		else if (format[i + 1] == 's')
-		{
-			ze_count = _puts(va_arg(print, char *));
-			i++;
-			count += (ze_count - 1);
-		}
-
-		else if (format[i + 1] == '%')
-		{
-			_putchar('%');
-		}
-		count++;
+		ze_count = i;
+		i = i + 1;
+	}
 
 		va_end(print);
-	}
 	return (count);
 }
