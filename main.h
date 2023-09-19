@@ -104,7 +104,7 @@ int _isdigit(int c);
 int _strlen(char *s);
 
 
-/*  gets .    TO GET ANYTHING     */
+/*  _gets.c .    TO GET ANYTHING     */
 /* get specifieres */
 int (*get_specifier(char *s))(va_list arpp, paras_t *paras);
 int get_print_func(char *s, va_list arpp, paras_t *paras);
@@ -117,7 +117,7 @@ char *get_width(char *s, paras_t *paras, va_list arpp);
 
 
 
-/* prints .   TO PRINT EVERYTHING     */
+/* prints.c .   TO PRINT EVERYTHING     */
 
 /*p 1*/
 /* print functions  */
@@ -140,18 +140,19 @@ int print_HEX(va_list arpp, paras_t *paras);
 
 
 /*p 3*/
-/* print_number.c module */
+/* simple printers no. */
+int print_from_to(char *sttr, char *sttp, char *except);
+/* print number */
 int print_number(char *str, paras_t *paras);
 int print_number_right_shift(char *str, paras_t *paras);
 int print_number_left_shift(char *str, paras_t *paras);
-/* simple_printers.c module */
-int print_from_to(char *sttr, char *sttp, char *except);
+
 
 /*p 4*/
-/* number.c module */
+/* print about number */
 int print_address(va_list arpp, paras_t *paras);
 int print_unsigned(va_list arpp, paras_t *paras);
-/* simple_printers.c module */
+/* simple printers no. */
 int print_rev(va_list arpp, paras_t *paras);
 int print_rot13(va_list arpp, paras_t *paras);
 

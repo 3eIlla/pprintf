@@ -78,7 +78,8 @@ char *get_precision(char *pop, paras_t *paras, va_list arpp)
 char *convert(long int num, int base, int flags, paras_t *paras)
 {
 	static char *arr, buffer[50];
-	char *pontr, signal;
+	char signal;
+	char *pontr = NULL;
 	unsigned long ln = num;
 	(void)paras;
 
@@ -87,13 +88,18 @@ char *convert(long int num, int base, int flags, paras_t *paras)
 		ln = -num;
 		signal = '-';
 	}
-		for (signal = 0, *pontr = '\0'; ln != 0; *--pontr = arr[ln % base])
+		for (signal = 0 && ln != 0; ; *--pontr = arr[ln % base])
 		{
-			arr = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
-			pontr = &buffer[49];	
+			if (*pontr == '\0')
+			{
+				arr = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
+				pontr = &buffer[49];
+			}
+			else if (signal)
+			{
+				*--pontr = signal;
+			}
 		}
-	if (signal)
-		*--pontr = signal;
 	return (pontr);
 }
 
@@ -116,12 +122,12 @@ int _isdigit(int c)
  */
 int _strlen(char *s)
 {
-	int lil;
+	int lil = 0;
 
-	for (lil = 0; ; *s++)
+	while (lil == 0)
 	{
-		lil = lil + 1;
+	*s += 1;
 	}
-	
+	lil = lil + 1;
 	return (lil);
 }
