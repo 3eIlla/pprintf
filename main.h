@@ -33,7 +33,7 @@
 int _printf(const char *format, ...);
 
 /*/personal_sub-main*/
-int ze_putchar(char *c);
+int ze_putchar(char c);
 int ze_puts(char *c);
 
 
@@ -44,6 +44,7 @@ int ze_puts(char *c);
 
 
 #define PARAMS_INIT {0}
+/* .  paras_t paras = PARAMS_INIT;  */
 /**
  * struct paras - struc out
 */
