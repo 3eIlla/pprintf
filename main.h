@@ -79,7 +79,7 @@ typedef struct parameters
 typedef struct specifier
 {
 	char *specifier;
-	int (*f)(va_list, paras_t *);
+	int (*func)(va_list, paras_t *);
 } specifier_t;
 
 
@@ -93,19 +93,19 @@ int _printf(const char *format, ...);
 
 
 /* .    helper.c .  */
-/* parameters.c  */
+/* parameters  */
 void init_paras(paras_t *paras, va_list arpp);
-/* string_fields.c  */
+/* strings fields  */
 char *get_precision(char *pop, paras_t *paras, va_list arpp);
-/* number.c */
+/* number converter */
 char *convert(long int num, int base, int flags, paras_t *paras);
-/* print_number.c  */
+/* print numbers  */
 int _isdigit(int c);
 int _strlen(char *s);
 
 
-/* .    TO GET ANYTHING     */
-/* specifier.c module */
+/*  gets .    TO GET ANYTHING     */
+/* get specifieres */
 int (*get_specifier(char *s))(va_list arpp, paras_t *paras);
 int get_print_func(char *s, va_list arpp, paras_t *paras);
 int get_flag(char *s, paras_t *paras);
@@ -113,31 +113,44 @@ int get_modifier(char *s, paras_t *paras);
 char *get_width(char *s, paras_t *paras, va_list arpp);
 
 
-/* .   TO PRINT EVERYTHING     */
-/* print_functions.c module */
+
+
+
+
+/* prints .   TO PRINT EVERYTHING     */
+
+/*p 1*/
+/* print functions  */
 int print_char(va_list arpp, paras_t *paras);
 int print_int(va_list arpp, paras_t *paras);
 int print_string(va_list arpp, paras_t *paras);
 int print_percent(va_list arpp, paras_t *paras);
 int print_S(va_list arpp, paras_t *paras);
-/* number.c module */
-int print_unsigned(va_list arpp, paras_t *paras);
-int print_address(va_list arpp, paras_t *paras);
-/* convert_number.c module */
+
+
+/*p 2*/
+/* print no. that need convert */
 int print_hex(va_list arpp, paras_t *paras);
 int print_HEX(va_list arpp, paras_t *paras);
 int print_binary(va_list arpp, paras_t *paras);
 int print_octal(va_list arpp, paras_t *paras);
-/* simple_printers.c module */
-int print_from_to(char *sttr, char *sttp, char *except);
-int print_rev(va_list arpp, paras_t *paras);
-int print_rot13(va_list arpp, paras_t *paras);
+
+
+/*p 3*/
 /* print_number.c module */
 int print_number(char *str, paras_t *paras);
 int print_number_right_shift(char *str, paras_t *paras);
 int print_number_left_shift(char *str, paras_t *paras);
+/* simple_printers.c module */
+int print_from_to(char *sttr, char *sttp, char *except);
 
-
+/*p 4*/
+/* number.c module */
+int print_address(va_list arpp, paras_t *paras);
+int print_unsigned(va_list arpp, paras_t *paras);
+/* simple_printers.c module */
+int print_rev(va_list arpp, paras_t *paras);
+int print_rot13(va_list arpp, paras_t *paras);
 
 
 #endif

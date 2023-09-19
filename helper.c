@@ -16,9 +16,6 @@ void init_paras(paras_t *paras, va_list arpp)
 	paras->space_flag = 0;
 	paras->hashtag_flag = 0;
 
-	paras->minus_flag = 0;
-
-
 	/*task 8*/
 	paras->l_modifier = 0;
 	paras->h_modifier = 0;
@@ -31,6 +28,9 @@ void init_paras(paras_t *paras, va_list arpp)
 
 	/*task 11*/
 	paras->zero_flag = 0;
+
+	/*task 12*/
+	paras->minus_flag = 0;
 
 	(void)arpp;
 }
