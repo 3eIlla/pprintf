@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 
 	va_start(print, format);
 
-	for (i = (char *); *i; i++)
+	for (i = (char *)format; *i; i++)
 	{
 		init_paras(&paras, print);
 		if (*i != '%')

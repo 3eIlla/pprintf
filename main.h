@@ -29,6 +29,10 @@ int _putchar(char c);
 int _puts(char *c);
 
 
+
+
+
+
 #define PARAMS_INIT {0}
 /* .   */
 /**
@@ -39,6 +43,11 @@ typedef struct paras
 	unsigned int unsign			: 1;
 } paras_t;
 
+void init_paras(paras_t *paras, va_list print)
+{
+	paras->unsign = 0;
+	(void)print;
+};
 
 
 #endif
