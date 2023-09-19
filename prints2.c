@@ -47,7 +47,7 @@ int print_octal(va_list arpp, paras_t *paras)
 }
 
 /**
- * print_hex - unsigned hex lowercase no. 
+ * print_hex - unsigned hex lowercase no.
  * @arpp: arg pointer
  * @paras: parames struct
  *

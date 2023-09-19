@@ -39,8 +39,8 @@
  *
  * @minus_flag: flag to % -
  *
- * @l_modifier: % l_modifier 
- * @h_modifier: % h_modifier 
+ * @l_modifier: % l_modifier
+ * @h_modifier: % h_modifier
  *
  * @width: field width specified
  *
@@ -56,7 +56,7 @@ typedef struct parameters
 	unsigned int plus_flag		: 1;
 	unsigned int space_flag		: 1;
 	unsigned int hashtag_flag	: 1;
-	
+
 	unsigned int minus_flag		: 1;
 
 	unsigned int l_modifier		: 1;
