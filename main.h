@@ -86,7 +86,10 @@ int (*get_specifier(char *spc))(va_list print, paras_t *paras);
 
 
 
+/*4* local buffer of 1024 chars in order to call write as little as possible.*/
 
-
+#define OUT_PUT_BUFF_SIZE 1024
+#define BUFF_FLUSH -1
+/* . _putchar(BUF_FLUSH); */
 
 #endif

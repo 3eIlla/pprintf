@@ -20,7 +20,7 @@ void init_paras(paras_t *paras, va_list print)
 /**
  * get_print_func - find func form
  * @spc: strin
- * @print:
+ * @print: *argmnt
  * @paras: Parameters
  * Return: no. of byts
 */

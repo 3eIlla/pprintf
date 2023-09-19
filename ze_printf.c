@@ -10,6 +10,7 @@
 int _printf(const char *format, ...)
 {
 	unsigned int i, ze_count, count = 0;
+	paras_t paras = PARAMS_INIT;
 
 	va_list print;
 
@@ -40,10 +41,9 @@ int _printf(const char *format, ...)
 		{
 			ze_putchar('%');
 		}
-
-		va_end(print);
-
 		count++;
+
+		va_end(print);	
 	}
 	return (count);
 }
