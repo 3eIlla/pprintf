@@ -101,7 +101,7 @@ int get_flag(char *s, paras_t *paras)
 
 /**
  * get_modifier - modifier func
- * @s: string format 
+ * @s: string format
  * @paras: parames struct
  *
  * Return: modifier valid

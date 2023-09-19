@@ -38,7 +38,7 @@ void init_paras(paras_t *paras, va_list arpp)
 
 /**
  * get_precision -  precision from strin
- * @pop: strin format 
+ * @pop: strin format
  * @paras: paramt struct
  * @arpp: arg pointer
  *
